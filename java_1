@@ -1,0 +1,29 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        ArrayList<Integer> numbers = new ArrayList<>();
+
+        System.out.println("Enter integers (type 'stop' to finish):");
+
+        while (true) {
+            String input = sc.next();
+            if (input.equalsIgnoreCase("stop")) break;
+
+            // String → int → Integer (Autoboxing)
+            Integer num = Integer.parseInt(input); 
+            numbers.add(num);
+        }
+
+        int sum = 0;
+        // Enhanced for loop → unboxing happens automatically
+        for (int num : numbers) {
+            sum += num;
+        }
+
+        System.out.println("Sum of entered integers: " + sum);
+        sc.close();
+    }
+}
